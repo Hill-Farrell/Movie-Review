@@ -10,8 +10,13 @@ function MovieList(props){
     <Link to = "/review">Review</Link>
     <ul>
       {
-        props.fav_movies.map(movie => <li>{movie.title}<br />Release: {movie.release}<br />Actors: {movie.actors}<br />Rating: {movie.rating}</li>)
-        
+        props.fav_movies.map(movie => <li>{movie.title}<br />
+        Release: {movie.release}<br />
+        Actors: {movie.actors}<br />
+        <img height={200}
+        src={movie.image} ></img><br />
+        Rating: {movie.rating}
+        <br /><br /></li>)
       }
     </ul>
     </>
@@ -41,10 +46,6 @@ function App() {
       <Route path = "/review" element = {<LeaveReview movies = {movies} setMovies = {setMovies}/>}/>
     </Routes>
   )
-
-  
-
-
 }
 
 export default App;
