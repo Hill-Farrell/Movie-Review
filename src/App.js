@@ -10,7 +10,8 @@ function MovieList(props){
     <Link to = "/review">Review</Link>
     <ul>
       {
-        props.fav_movies.map(movie => <li>{movie.title}</li>)
+        props.fav_movies.map(movie => <li>{movie.title}<br />Release: {movie.release}<br />Actors: {movie.actors}<br />Rating: {movie.rating}</li>)
+        
       }
     </ul>
     </>

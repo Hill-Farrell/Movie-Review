@@ -1,6 +1,25 @@
 [
-    {"title": "Shrek"},
-    {"title": "Shrek 2"},
-    {"title": "Shrek the Third"},
-    {"title": "Shrek Forever After"}
+    {"title": "Shrek",
+    "release": "2001",
+    "actors": "Mike Myers, Eddie Murphy",
+    "image": "",
+    "rating": "4/5"},
+
+    {"title": "Shrek 2",
+    "release": "2004",
+    "actors": "Mike Myers, Eddie Murphy",
+    "image": "",
+    "rating": "5/5"},
+
+    {"title": "Shrek the Third",
+    "release": "2007",
+    "c": "Mike Myers, Eddie Murphy",
+    "image": "",
+    "rating": "2/5"},
+
+    {"title": "Shrek Forever After",
+    "release": "2010",
+    "actors": "Mike Myers, Eddie Murphy",
+    "image": "",
+    "rating": "4/5"}
 ]
