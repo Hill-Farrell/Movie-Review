@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {useState, useEffect} from "react";
 import {LeaveReview} from './Form.js';
@@ -9,15 +8,24 @@ function MovieList(props){
     <>
     <Link to = "/review">Review</Link>
     <ul>
+      <div id='movieDiv'>
       {
-        props.fav_movies.map(movie => <li>{movie.title}<br />
+        props.fav_movies.map(movie => 
+        <li>{movie.title}<br />
         Release: {movie.release}<br />
         Actors: {movie.actors}<br />
         <img height={200}
         src={movie.image} ></img><br />
-        Rating: {movie.rating}
-        <br /><br /></li>)
+        Rating: {movie.rating}<br />
+          
+        <button onClick={}>
+            Remove
+        </button><br /><br /><br />
+
+        
+        </li>)
       }
+      </div>
     </ul>
     </>
   )
