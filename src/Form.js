@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, { useRef} from 'react';
 import  {Link} from "react-router-dom";
 
 export function LeaveReview(props){

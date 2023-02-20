@@ -4,28 +4,41 @@ import {LeaveReview} from './Form.js';
 import {Routes, Route, Link} from "react-router-dom";
 
 function MovieList(props){
+  // const [shownMovies, setShownMovies] = useState({});
+
+  // const toggleMovie = title => {
+  //   setShownMovies(prevShownMovies => ({
+  //     ...prevShownMovies,
+  //     [title]: !prevShownMovies[title]
+  //   }));
+  // };
+
   return (
     <>
     <Link to = "/review">Review</Link>
     <ul>
-      <div id='movieDiv'>
       {
         props.fav_movies.map(movie => 
-        <li>{movie.title}<br />
-        Release: {movie.release}<br />
-        Actors: {movie.actors}<br />
-        <img height={200}
-        src={movie.image} ></img><br />
-        Rating: {movie.rating}<br />
-          
-        <button onClick={}>
-            Remove
-        </button><br /><br /><br />
+          <div key = {movie.title}>
+            <li>{movie.title}<br />
+            Release: {movie.release}<br />
+            Actors: {movie.actors}<br />
+            <img height={200}
+            src={movie.image} ></img><br />
+            Rating: {movie.rating}<br />
+              
+            <button>
+              Remove
+            </button><br /><br />
 
-        
-        </li>)
+            {/* {movie.mov ? (
+            <button onClick={() => toggleMovie(movie.title)}>
+                Remove
+            </button> ) : null} <br /><br /><br />
+            {shownMovies[movie.title] ? <p>{movie.mov}</p> : null} */}
+        </li>
+        </div>)
       }
-      </div>
     </ul>
     </>
   )
