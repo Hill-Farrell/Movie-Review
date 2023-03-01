@@ -1,22 +1,14 @@
 import './App.css';
 import {useState, useEffect} from "react";
 import {LeaveReview} from './Form.js';
-import {Routes, Route, Link} from "react-router-dom";
+import Navbar from './components/Navbar.js';
+import {Routes, Route} from "react-router-dom";
 
 function MovieList(props){
-  // const [shownMovies, setShownMovies] = useState({});
-
-  // const toggleMovie = title => {
-  //   setShownMovies(prevShownMovies => ({
-  //     ...prevShownMovies,
-  //     [title]: !prevShownMovies[title]
-  //   }));
-  // };
 
   return (
     <>
-    <Link to = "/review">Review</Link>
-    <ul>
+    <ul className='mov'>
       {
         props.fav_movies.map(movie => 
           <div key = {movie.title}>
@@ -31,11 +23,6 @@ function MovieList(props){
               Remove
             </button><br /><br />
 
-            {/* {movie.mov ? (
-            <button onClick={() => toggleMovie(movie.title)}>
-                Remove
-            </button> ) : null} <br /><br /><br />
-            {shownMovies[movie.title] ? <p>{movie.mov}</p> : null} */}
         </li>
         </div>)
       }
@@ -62,10 +49,16 @@ function App() {
   console.log(movies)
 
   return (
-    <Routes>
-      <Route path = "/" element = {<MovieList fav_movies = {movies} />}/>
-      <Route path = "/review" element = {<LeaveReview movies = {movies} setMovies = {setMovies}/>}/>
-    </Routes>
+  <>
+    <Navbar />
+      <div className="container">
+        <Routes>
+          <Route path = "/" element = {<MovieList fav_movies = {movies} />}/>
+          <Route path = "/review" element = {<LeaveReview movies = {movies} setMovies = {setMovies}/>}/>
+        </Routes>
+      </div>
+  </>
+
   )
 }
 

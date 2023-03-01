@@ -1,5 +1,4 @@
 import React, { useRef} from 'react';
-import  {Link} from "react-router-dom";
 
 export function LeaveReview(props){
 
@@ -37,7 +36,6 @@ export function LeaveReview(props){
 
     return (
         <>
-        <Link to = "/">Home</Link>
         <form onSubmit={submit}>
             <label>Title:</label><br />
             <input 
