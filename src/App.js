@@ -19,9 +19,9 @@ function MovieList(props){
             src={movie.image} ></img><br />
             Rating: {movie.rating}<br />
               
-            <button>
+            {/* <button>
               Remove
-            </button><br /><br />
+            </button><br /><br /> */}
 
         </li>
         </div>)
@@ -36,7 +36,8 @@ function App() {
   let [movies, setMovies] = useState(null);
 
   useEffect( () => {
-    fetch("./movies.json")
+    console.log("Loading Data..");
+    fetch("/api/movies")
     .then(response => response.json())
     .then(setMovies)
     .catch(e => console.log(e.message)) 

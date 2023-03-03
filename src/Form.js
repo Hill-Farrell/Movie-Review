@@ -8,55 +8,58 @@ export function LeaveReview(props){
     const movieRating = useRef();
     const movieImage = useRef();
 
-    const submit = (event) => {
-        event.preventDefault();
+    // const submit = (event) => {
+    //     event.preventDefault();
 
-        const title = movieTitle.current.value;
-        movieTitle.current.value = "";
+    //     const title = movieTitle.current.value;
+    //     movieTitle.current.value = "";
 
-        const release = movieRelease.current.value;
-        movieRelease.current.value = "";
+    //     const release = movieRelease.current.value;
+    //     movieRelease.current.value = "";
 
-        const actors = movieActors.current.value;
-        movieActors.current.value = "";
+    //     const actors = movieActors.current.value;
+    //     movieActors.current.value = "";
 
-        const rating = movieRating.current.value;
-        movieRating.current.value = "";
+    //     const rating = movieRating.current.value;
+    //     movieRating.current.value = "";
 
-        const image = movieImage.current.value;
-        movieImage.current.value = "";
+    //     const image = movieImage.current.value;
+    //     movieImage.current.value = "";
 
-        props.setMovies(props.movies);
+    //     props.movies.push({"title": title, "release": release, "actors": actors, "rating": rating, "image": image});
+    //     props.setMovies(props.movies);
 
-        props.movies.push({"title": title, "release": release, "actors": actors, "rating": rating, "image": image});
+    //     alert(title + " Added")
 
-        alert(title + " Added")
-
-    }
+    // }
 
     return (
         <>
-        <form onSubmit={submit}>
+        <form method="post" action="/api/review">
             <label>Title:</label><br />
             <input 
+            name = "title"
             ref = {movieTitle}
-            type = "text"/><br /><br />
+            type = "text"/><br />
             <label>Release Year:</label><br />
             <input 
+            name = "release"
             ref = {movieRelease}
-            type = "text"/><br /><br />
+            type = "text"/><br />
             <label>Actors:</label><br />
             <input 
+            name = "actors"
             ref = {movieActors}
-            type = "text"/><br /><br />
+            type = "text"/><br />
             <label>Rating:</label><br />
             <input 
+            name = "rating"
             ref = {movieRating}
             type = "text"/><br /><br />
 
             <div>
             <label>Image:</label><br />
-            <select ref = {movieImage}>
+            <select ref = {movieImage} name = "image">
 
             <option value="https://www.etsy.com/img/27475238/r/il/f9eed6/3758942437/il_fullxfull.3758942437_9564.jpg">Shrek</option>
             <option value="https://m.media-amazon.com/images/M/MV5BMDJhMGRjN2QtNDUxYy00NGM3LThjNGQtMmZiZTRhNjM4YzUxL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg">Shrek 2</option>
@@ -68,7 +71,7 @@ export function LeaveReview(props){
             </select>
             </div><br />
 
-            <button>ADD</button>
+            <input type="submit" value="Submit" />
 
         </form>
         </>
