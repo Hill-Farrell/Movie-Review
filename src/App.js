@@ -47,7 +47,6 @@ function App() {
     .catch(e => console.log(e.message)) 
   }, [])
 
-
   if(movies == null){
     return <h1>Loading....</h1>;
   }
