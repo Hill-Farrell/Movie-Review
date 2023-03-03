@@ -6,25 +6,29 @@ import {Routes, Route} from "react-router-dom";
 
 function MovieList(props){
 
+  const removeItem = (title) => {
+    props.setMovies(props.fav_movies.filter(movieElement => movieElement.title != title))
+  }
+
+
   return (
     <>
     <ul className='mov'>
       {
-        props.fav_movies.map(movie => 
-          <div key = {movie.title}>
-            <li>{movie.title}<br />
+        props.fav_movies.map(movie => {
+          //<div key = {movie.title}>
+            return <li>{movie.title}<br />
             Release: {movie.release}<br />
             Actors: {movie.actors}<br />
             <img height={200}
             src={movie.image} ></img><br />
             Rating: {movie.rating}<br />
               
-            {/* <button>
-              Remove
-            </button><br /><br /> */}
+            <button onClick = {() => removeItem(movie.title)}>Remove</button><br /><br />
 
-        </li>
-        </div>)
+        </li> }
+        //</div>)
+        )
       }
     </ul>
     </>
@@ -54,7 +58,7 @@ function App() {
     <Navbar />
       <div className="container">
         <Routes>
-          <Route path = "/" element = {<MovieList fav_movies = {movies} />}/>
+          <Route path = "/" element = {<MovieList fav_movies = {movies} setMovies={setMovies}/>}/>
           <Route path = "/review" element = {<LeaveReview movies = {movies} setMovies = {setMovies}/>}/>
         </Routes>
       </div>
