@@ -33,10 +33,8 @@ export function LeaveReview(props){
             type = "text"/><br /><br />
 
             <div>
-            <label>Add Poster:</label><br />
-
-            <input type="file" name = "movie_poster"/>
-
+                <label>Add Poster:</label><br />
+                <input type="file" name = "movie_poster"/>
             </div><br />
 
             <input type="submit" value="Submit" />
